@@ -66,14 +66,13 @@ const upload = () => {
     );
     if (!feedback) return setStatusText("Erreur : problem dans l'analyse de CV");
 
-    const feedbackTexte =
-      typeof feedback.message.content === "string"
-        ? feedback.message.content
-        : feedback.message.content[0].text;
-    data.feedback = JSON.parse(feedbackTexte);
-    await kv.set(`resume${uuid}`, JSON.stringify(data));
+    const feedbackText = typeof feedback.message.content === "string" ? feedback.message.content : feedback.message.content[0].text;
+
+    data.feedback = JSON.parse(feedbackText);
+    await kv.set(`resume:${uuid}`, JSON.stringify(data));
     setStatusText("L'analyse de CV est terminé, redirection ...");
-    console.log(data);
+    navigate(`/resume/${uuid}`);
+    
   }
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
