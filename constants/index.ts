@@ -139,21 +139,16 @@ export const AIResponseFormat = `
 export const prepareInstructions = ({
   jobTitle,
   jobDescription,
-  AIResponseFormat,
 }: {
   jobTitle: string;
   jobDescription: string;
-  AIResponseFormat: string;
 }) =>
-  `You are an expert in ATS (Applicant Tracking System) and resume analysis.
-  Please analyze and rate this resume and suggest how to improve it.
-  The rating can be low if the resume is bad.
-  Be thorough and detailed. Don't be afraid to point out any mistakes or areas for improvement.
-  If there is a lot to improve, don't hesitate to give low scores. This is to help the user to improve their resume.
-  If available, use the job description for the job user is applying to to give more detailed feedback.
-  If provided, take the job description into consideration.
-  The job title is: ${jobTitle}
-  The job description is: ${jobDescription}
-  Provide the feedback using the following format: ${AIResponseFormat}
-  Return the analysis as a JSON object, without any other text and without the backticks.
-  Do not include any other text or comments.`;
+  `Vous êtes un expert en ATS (Applicant Tracking System) et en analyse de CV.
+Veuillez analyser et noter ce CV, puis proposer des suggestions pour l'améliorer. La note peut être basse si le CV est de mauvaise qualité.
+Soyez exhaustif et précis. N'hésitez pas à pointer du doigt les erreurs et les points à améliorer. S'il y a beaucoup de choses à améliorer, n'hésitez pas à attribuer une note faible. L'objectif est d'aider l'utilisateur à optimiser son CV.
+Si elle est fournie, utilisez la description du poste pour lequel l'utilisateur postule afin de donner un retour plus détaillé.
+Le titre du poste est : ${jobTitle}
+La description du poste est : ${jobDescription}
+Fournissez le feedback en utilisant le format suivant : ${AIResponseFormat}
+Retournez l'analyse sous forme d'objet JSON, sans aucun autre texte et sans les guillemets inversés.
+N'incluez aucun autre texte ou commentaire.`;
