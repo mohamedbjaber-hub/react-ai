@@ -80,9 +80,6 @@ const resume = () => {
         }
         </section>
       </div>
-      <section className="main-section">
-        <h1>Compte Rendu Cv {id} </h1>
-      </section>
     </main>
   );
 };
