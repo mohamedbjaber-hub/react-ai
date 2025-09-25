@@ -55,6 +55,7 @@ const upload = () => {
           companyName, jobTitle, jobDescription,
           feedback: '',
       }
+      console.log({resumId : `resume:${uuid}`, data: JSON.stringify(data)})
 
       await kv.set(`resume:${uuid}`, JSON.stringify(data));
 
